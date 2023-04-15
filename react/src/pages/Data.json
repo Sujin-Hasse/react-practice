@@ -1,1 +1,12 @@
-{ "name": "윤혜민", "age": 24, "hobby": "잠자기" }
+{ 
+"name": "김수진", 
+"age": "26", 
+"favorite" : "LG Twins",
+"mbti": "ESTJ",
+"hobby" : ["tennis", "sleep", "baseball"],
+"birthday":"생일",
+"special": [
+    { "title": "테니스 조와", "content" : "러비스 짱 \n 테니스 치고 싶다"},
+    { "title": "hello react", "content": "not hell react"} 
+] 
+}
