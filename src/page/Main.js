@@ -1,5 +1,11 @@
+import Modal from "../components/Modal";
+
 const Main = () => {
-  return <></>;
+  return (
+    <>
+      <Modal />
+    </>
+  );
 };
 
 export default Main;
