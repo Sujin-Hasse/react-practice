@@ -5,50 +5,67 @@ import kakaoLogin from "../assets/image/icon_kakao.png";
 import googleLogin from "../assets/image/icon_google.png";
 import twitterLogin from "../assets/image/icon_twitter.png";
 import lineLogin from "../assets/image/icon_line.png";
+import { useState } from "react";
 
 const Main = () => {
+  const [loginModal, setLoginModal] = useState(false);
+
+  const openModal = () => {
+    setLoginModal(true);
+  }; // 2.openModal은 Modal의 state를 true로 상태전환,함수형태로 써야 함
+  const closeModal = () => {
+    setLoginModal(false);
+  }; //2-1.closeModal은 Modal의 state를 false로 상태전환,함수형태로 써야 함
+
   return (
     <>
-      {/* 여기는 수진이가 만든 모달 styled-components */}
-      <Background>
-        <WrapModal>
-          <WrapLogo>
-            <Logo src={logo} />
-          </WrapLogo>
-          <LoginText>로그인</LoginText>
+      {/*1.로그인버튼을 누르면 openModal 실행*/}
+      <HeaderLoginButton onClick={openModal}>로그인</HeaderLoginButton>
+      {/* 3.true가 된 loginModal 가져오기*/}
+      <Modal open={loginModal} close={closeModal}>
+        {/* 여기는 수진이가 만든 모달 styled-components */}
+        <Background>
+          <WrapModal>
+            <WrapLogo>
+              <Logo src={logo} />
+            </WrapLogo>
+            <LoginText>로그인</LoginText>
 
-          <WrapInput>
-            <IdInput placeholder="이메일" />
-            <PasswordInput placeholder="비밀번호" />
-          </WrapInput>
+            <WrapInput>
+              <IdInput placeholder="이메일" />
+              <PasswordInput placeholder="비밀번호" />
+            </WrapInput>
 
-          <LoginButton>로그인</LoginButton>
-          <CheckPassword>비밀번호를 잊어버리셨나요?</CheckPassword>
-          <MakeAccount>
-            계정이 없으신가요? <MakeAccountButton>회원가입</MakeAccountButton>
-          </MakeAccount>
-          <WrapLine>
-            <Line />
-            <LineText>OR</LineText>
-            <BackLine />
-          </WrapLine>
+            <LoginButton>로그인</LoginButton>
+            <CheckPassword>비밀번호를 잊어버리셨나요?</CheckPassword>
+            <MakeAccount>
+              계정이 없으신가요? <MakeAccountButton>회원가입</MakeAccountButton>
+            </MakeAccount>
+            <WrapLine>
+              <Line />
+              <LineText>OR</LineText>
+              <BackLine />
+            </WrapLine>
 
-          <SocialLoginList>
-            <KakaoLogin src={kakaoLogin} />
-            <GoogleLogin src={googleLogin} />
-            <TwitterLogin src={twitterLogin} />
-            <LineLogin src={lineLogin} />
-          </SocialLoginList>
+            <SocialLoginList>
+              <KakaoLogin src={kakaoLogin} />
+              <GoogleLogin src={googleLogin} />
+              <TwitterLogin src={twitterLogin} />
+              <LineLogin src={lineLogin} />
+            </SocialLoginList>
 
-          <LoginTip>
-            TIP.왓챠 계정이 있으신가요? 왓챠와 왓챠피디아는 같은 계정을
-            사용해요.
-          </LoginTip>
-        </WrapModal>
-      </Background>
+            <LoginTip>
+              TIP.왓챠 계정이 있으신가요? 왓챠와 왓챠피디아는 같은 계정을
+              사용해요.
+            </LoginTip>
+          </WrapModal>
+        </Background>
+      </Modal>
     </>
   );
 };
+
+const HeaderLoginButton = styled.button``;
 
 const Background = styled.div`
   display: flex;
