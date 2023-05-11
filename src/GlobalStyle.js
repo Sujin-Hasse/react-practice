@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-    *, *::before, *::after {
+*, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
     button{
       cursor: pointer;
       outline: none;
+      font-family: 'Noto Sans KR', sans-serif;
     };
 `;
 

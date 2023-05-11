@@ -1,5 +1,7 @@
 import Modal from "../components/Modal";
+import Header from "../components/Header";
 import styled from "styled-components";
+
 import logo from "../assets/image/icon_logo.png";
 import kakaoLogin from "../assets/image/icon_kakao.png";
 import googleLogin from "../assets/image/icon_google.png";
@@ -20,7 +22,14 @@ const Main = () => {
   return (
     <>
       {/*1.로그인버튼을 누르면 openModal 실행*/}
-      <HeaderLoginButton onClick={openModal}>로그인</HeaderLoginButton>
+      <WrapHeader>
+        <Header />
+        <WrapBackHeader>
+          <SearchInput />
+          <HeaderLoginButton onClick={openModal}>로그인</HeaderLoginButton>
+          <SignUpButton>회원가입</SignUpButton>
+        </WrapBackHeader>
+      </WrapHeader>
       {/* 3.true가 된 loginModal 가져오기*/}
       <Modal open={loginModal} close={closeModal}>
         {/* 여기는 수진이가 만든 모달 styled-components */}
@@ -64,8 +73,28 @@ const Main = () => {
     </>
   );
 };
+const WrapHeader = styled.div`
+  display: flex;
+  margin: 15px 0px 15px 15px;
+`;
+const WrapBackHeader = styled.div``;
 
-const HeaderLoginButton = styled.button``;
+const SearchInput = styled.input``;
+
+const HeaderLoginButton = styled.button`
+  border: none;
+  background: none;
+  color: #74747b;
+`;
+
+const SignUpButton = styled.button`
+  background: none;
+  color: #353535;
+  font-weight: 500;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 14px 6px;
+`;
 
 const Background = styled.div`
   display: flex;
