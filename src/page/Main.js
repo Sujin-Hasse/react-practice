@@ -25,7 +25,7 @@ const Main = () => {
       <WrapHeader>
         <Header />
         <WrapBackHeader>
-          <SearchInput />
+          <SearchInput placeholder="콘텐츠, 인물, 컬렉션, 유저를 검색해보세요." />
           <HeaderLoginButton onClick={openModal}>로그인</HeaderLoginButton>
           <SignUpButton>회원가입</SignUpButton>
         </WrapBackHeader>
@@ -75,25 +75,45 @@ const Main = () => {
 };
 const WrapHeader = styled.div`
   display: flex;
-  margin: 15px 0px 15px 15px;
+  margin: 15px 0px 15px 30px;
+  justify-content: center;
 `;
-const WrapBackHeader = styled.div``;
+const WrapBackHeader = styled.div`
+  display: flex;
+`;
 
-const SearchInput = styled.input``;
+const SearchInput = styled.input`
+  background-color: RGB(245, 245, 247);
+  border: none;
+  margin: 0px 0px 0px 0px;
+  width: 250px;
+
+  ::placeholder {
+    color: RGB(131, 131, 138);
+    font-size: 13px;
+    padding: 10px;
+    font-weight: 550;
+    letter-spacing: -1px;
+  }
+`;
 
 const HeaderLoginButton = styled.button`
   border: none;
   background: none;
   color: #74747b;
+  margin: 0px 0px 0px 24px;
 `;
 
 const SignUpButton = styled.button`
   background: none;
   color: #353535;
-  font-weight: 500;
+  font-weight: 600;
   text-align: center;
   border-radius: 6px;
   padding: 5px 14px 6px;
+  margin: 0px 0px 0px 24px;
+  border: 1px solid rgba(116, 116, 123, 0.5);
+  font-size: 14px;
 `;
 
 const Background = styled.div`
