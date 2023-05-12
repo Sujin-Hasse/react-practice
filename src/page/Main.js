@@ -26,7 +26,7 @@ const Main = () => {
       <WrapHeader>
         <Header />
         <WrapBackHeader>
-          <SearchInput placeholder="콘텐츠, 인물, 컬렉션, 유저를 검색해보세요." />
+          <SearchInput placeholder="🔍 콘텐츠, 인물, 컬렉션, 유저를 검색해보세요." />
           <HeaderLoginButton onClick={openModal}>로그인</HeaderLoginButton>
           <SignUpButton>회원가입</SignUpButton>
         </WrapBackHeader>
