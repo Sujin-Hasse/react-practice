@@ -1,12 +1,11 @@
 import React from "react";
-import GlobalStyle from "../GlobalStyle";
+import { DATA } from "../assets/Data.js";
+import Movie from "../components/Movie.js";
+import styled from "styled-components";
 
 const Ranking = () => {
-  return (
-    <div>
-      <GlobalStyle />
-    </div>
-  );
+  return ();
 };
+
 
 export default Ranking;

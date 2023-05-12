@@ -1,6 +1,7 @@
 import Modal from "../components/Modal";
 import Header from "../components/Header";
 import styled from "styled-components";
+import Ranking from "../components/Ranking";
 
 import logo from "../assets/image/icon_logo.png";
 import kakaoLogin from "../assets/image/icon_kakao.png";
@@ -30,6 +31,9 @@ const Main = () => {
           <SignUpButton>회원가입</SignUpButton>
         </WrapBackHeader>
       </WrapHeader>
+
+      <Ranking />
+
       {/* 3.true가 된 loginModal 가져오기*/}
       <Modal open={loginModal} close={closeModal}>
         {/* 여기는 수진이가 만든 모달 styled-components */}
@@ -73,6 +77,15 @@ const Main = () => {
     </>
   );
 };
+
+function Data(props) {
+  return (
+    <div>
+      <p>{props.rank}</p>
+    </div>
+  );
+}
+
 const WrapHeader = styled.div`
   display: flex;
   margin: 15px 0px 15px 30px;
