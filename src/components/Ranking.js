@@ -4,7 +4,11 @@ import Movie from "../components/Movie.js";
 import styled from "styled-components";
 
 const Ranking = () => {
-  return ();
+  return (
+
+    
+
+  );
 };
 
 
