@@ -3,12 +3,17 @@ import Header from "../components/Header";
 import styled from "styled-components";
 import Ranking from "../components/Ranking";
 
+import { Routes, Route } from "react-router-dom";
+import Movie from "../components/Movie";
+import MoviePage from "../components/MoviePage";
+
 import logo from "../assets/image/icon_logo.png";
 import kakaoLogin from "../assets/image/icon_kakao.png";
 import googleLogin from "../assets/image/icon_google.png";
 import twitterLogin from "../assets/image/icon_twitter.png";
 import lineLogin from "../assets/image/icon_line.png";
 import { useState } from "react";
+import { DATA } from "../assets/Data";
 
 const Main = () => {
   const [loginModal, setLoginModal] = useState(false);
@@ -19,6 +24,22 @@ const Main = () => {
   const closeModal = () => {
     setLoginModal(false);
   }; //2-1.closeModal은 Modal의 state를 false로 상태전환,함수형태로 써야 함
+  const temp = {
+    rank: 1,
+    // img: poster1,
+    title: "가디언즈 오브 갤럭시: Volume 3",
+    year: "2023",
+    country: "미국",
+    average: "4.1",
+    percent: "37%",
+    audience: "370000",
+    originalTitle: "Guardians of the Galaxy Vol. 3",
+    genre: "액션/모험/코미디/SF",
+    runningTime: "2시간 30분",
+    age: "12세 관람가",
+    description:
+      "'가모라'를 잃고 슬픔에 빠져 있던 '피터 퀼'이 위기에 처한 은하계와 동료를 지키기 위해 다시 한번 가디언즈 팀과 힘을 모으고, 성공하지 못할 경우 그들의 마지막이 될지도 모르는 미션에 나서는 이야기",
+  };
 
   return (
     <>
@@ -32,8 +53,12 @@ const Main = () => {
         </WrapBackHeader>
       </WrapHeader>
 
-      <Ranking />
+      <Routes>
+        <Route path="/" element={<Ranking data={DATA} />} />
+        <Route path="/main/:rank" element={<MoviePage />} />
+      </Routes>
 
+      {/* <Ranking data={DATA} /> */}
       {/* 3.true가 된 loginModal 가져오기*/}
       <Modal open={loginModal} close={closeModal}>
         {/* 여기는 수진이가 만든 모달 styled-components */}
@@ -72,19 +97,12 @@ const Main = () => {
               사용해요.
             </LoginTip>
           </WrapModal>
+          {/* {loginModal && <WrapModal />} */}
         </Background>
       </Modal>
     </>
   );
 };
-
-function Data(props) {
-  return (
-    <div>
-      <p>{props.rank}</p>
-    </div>
-  );
-}
 
 const WrapHeader = styled.div`
   display: flex;
