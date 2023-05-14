@@ -18,13 +18,15 @@ const Main = () => {
   );
 };
 
-const RankingTitle = styled.p`
-  font-size: 22px;
-  font-weight: 700;
-`;
 const WrapRanking = styled.div`
   display: flex;
   flex-direction: column;
   margin: 15px 0px 15px 30px;
+`;
+
+const RankingTitle = styled.p`
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 15px;
 `;
 export default Main;

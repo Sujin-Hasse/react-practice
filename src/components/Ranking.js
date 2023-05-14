@@ -19,11 +19,9 @@ const Ranking = ({ data }) => {
 };
 
 const MovieWrapper = styled.div`
-  padding: 10px;
   display: flex;
-  overflow: hidden;
   overflow: auto;
-  white-space: nowrap;
+  /* white-space: nowrap; */
 `;
 
 export default Ranking;

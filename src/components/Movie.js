@@ -5,8 +5,8 @@ const Movie = ({ data }) => {
   return (
     <>
       <MovieBox>
-        <Movierank>{data.rank}</Movierank>
         <WrapMovieImg>
+          <Movierank>{data.rank}</Movierank>
           <MovieImg src={data.img} />
         </WrapMovieImg>
 
@@ -17,13 +17,20 @@ const Movie = ({ data }) => {
         </Movieyear>
         <MovieAverage>평균★{data.average}</MovieAverage>
         <MoviePercent>
-          예매율 {data.percent} 누적관객 {data.audience}
+          예매율 {data.percent}•누적관객 {data.audience}
         </MoviePercent>
       </MovieBox>
     </>
   );
 };
 
+const MovieBox = styled.div`
+  flex-direction: column;
+  /* border: 1px solid; */
+  width: 197px;
+  height: 400px;
+  margin: 10px 10px 10px 10px;
+`;
 const WrapMovieImg = styled.div`
   position: relative;
   z-index: -1;
@@ -35,18 +42,12 @@ const MovieImg = styled.img`
   align-items: center;
 `;
 
-const MovieBox = styled.div`
-  flex-direction: column;
-  border: 1px solid;
-  width: 197px;
-  height: 400px;
-`;
-
 const MovieTitle = styled.p`
   font-size: 16px;
   font-weight: 600;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-top: 3px;
 `;
 
 const Movierank = styled.p`
@@ -65,14 +66,19 @@ const Movierank = styled.p`
 `;
 const Movieyear = styled.p`
   font-size: 14px;
+  margin-top: 3px;
 `;
 const MovieAverage = styled.p`
   color: RGB(84, 87, 101);
   font-size: 14px;
+  margin-top: 3px;
+  font-weight: 400;
 `;
 const MoviePercent = styled.p`
   color: RGB(116, 116, 122);
   font-size: 13px;
+  font-weight: 400;
+  margin-top: 3px;
 `;
 
 export default Movie;
