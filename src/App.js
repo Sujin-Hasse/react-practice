@@ -4,17 +4,14 @@ import Main from "./page/Main";
 import Header from "./components/Header";
 import Modal from "./components/Modal";
 import GlobalStyle from "./GlobalStyle.js";
-import { useState } from "react";
 
-function App(openModal) {
+function App() {
   return (
-    <>
-      <WrapMain>
-        <GlobalStyle />
-        <Header openModal={lo} />
-        <Main />
-      </WrapMain>
-    </>
+    <WrapMain>
+      <GlobalStyle />
+      <Header />
+      <Main />
+    </WrapMain>
   );
 }
 
