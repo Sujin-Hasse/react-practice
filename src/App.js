@@ -11,7 +11,6 @@ function App() {
   const handleLogin = () => {
     setClick(true);
   };
-
   console.log(handleLogin);
   return (
     <WrapMain>
