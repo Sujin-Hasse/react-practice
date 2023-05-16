@@ -2,9 +2,7 @@ import styled from "styled-components";
 import GlobalStyle from "../GlobalStyle";
 import logo from "../assets/image/icon_logo.png";
 
-const Header = ({ login }) => {
-  const openModal = () => {};
-
+const Header = ({ openModal }) => {
   return (
     <>
       <GlobalStyle />

@@ -6,12 +6,12 @@ import Modal from "./components/Modal";
 import GlobalStyle from "./GlobalStyle.js";
 import { useState } from "react";
 
-function App() {
+function App(openModal) {
   return (
     <>
       <WrapMain>
         <GlobalStyle />
-        <Header />
+        <Header openModal={lo} />
         <Main />
       </WrapMain>
     </>
