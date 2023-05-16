@@ -2,15 +2,23 @@ import "./App.css";
 import styled from "styled-components";
 import Main from "./page/Main";
 import Header from "./components/Header";
+import GlobalStyle from "../src/Globalstyle";
 import Modal from "./components/Modal";
-import GlobalStyle from "./GlobalStyle.js";
+import { useState } from "react";
 
 function App() {
+  const [click, setClick] = useState(false);
+
+  const handleLogin = () => {
+    setClick(true);
+  };
+
   return (
     <WrapMain>
       <GlobalStyle />
-      <Header />
+      <Header click={handleLogin} />
       <Main />
+      {click && <Modal click={setClick} />}
     </WrapMain>
   );
 }
