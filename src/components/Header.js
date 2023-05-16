@@ -1,18 +1,9 @@
 import styled from "styled-components";
 import GlobalStyle from "../GlobalStyle";
 import logo from "../assets/image/icon_logo.png";
-import Modal from "../components/Modal";
-import { useState } from "react";
 
-const Header = () => {
-  const [loginModal, setLoginModal] = useState(false);
-
-  const openModal = () => {
-    setLoginModal(true);
-  }; // 2.openModal은 Modal의 state를 true로 상태전환,함수형태로 써야 함
-  const closeModal = () => {
-    setLoginModal(false);
-  }; //2-1.closeModal은 Modal의 state를 false로 상태전환,함수형태로 써야 함
+const Header = ({ login }) => {
+  const openModal = () => {};
 
   return (
     <>

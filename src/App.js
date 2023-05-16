@@ -2,15 +2,19 @@ import "./App.css";
 import styled from "styled-components";
 import Main from "./page/Main";
 import Header from "./components/Header";
+import Modal from "./components/Modal";
 import GlobalStyle from "./GlobalStyle.js";
+import { useState } from "react";
 
 function App() {
   return (
-    <WrapMain>
-      <GlobalStyle />
-      <Header />
-      <Main />
-    </WrapMain>
+    <>
+      <WrapMain>
+        <GlobalStyle />
+        <Header />
+        <Main />
+      </WrapMain>
+    </>
   );
 }
 
