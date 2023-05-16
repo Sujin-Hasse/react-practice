@@ -1,12 +1,12 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import { DATA } from "../assets/Data";
+// import React from "react";
+// import { useParams } from "react-router-dom";
+// import { DATA } from "../assets/Data";
 
-const MoviePage = () => {
-  const params = useParams();
-  console.log(params);
+// const MoviePage = () => {
+//   const params = useParams();
+//   console.log(params);
 
-  return <></>;
-};
+//   return <></>;
+// };
 
-export default MoviePage;
+// export default MoviePage;
