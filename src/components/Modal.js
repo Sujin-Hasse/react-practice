@@ -5,14 +5,12 @@ import googleLogin from "../assets/image/icon_google.png";
 import twitterLogin from "../assets/image/icon_twitter.png";
 import lineLogin from "../assets/image/icon_line.png";
 
-{
-  /* {loginModal && <WrapModal />} */
-}
+// {loginModal && <WrapModal />}
 
-const Modal = () => {
+const Modal = ({ click }) => {
   return (
     <>
-      <CloseButton>&times;</CloseButton>
+      <CloseButton onClick={() => click(false)}>&times;</CloseButton>
       {/* 3.true가 된 loginModal 가져오기*/}
       {/* 여기는 수진이가 만든 모달 styled-components */}
       <Background>

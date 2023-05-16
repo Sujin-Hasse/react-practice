@@ -8,7 +8,6 @@ import { useState } from "react";
 
 function App() {
   const [click, setClick] = useState(false);
-
   const handleLogin = () => {
     setClick(true);
   };
@@ -19,7 +18,6 @@ function App() {
       <Header click={handleLogin} />
       <Main />
       {click && <Modal click={setClick} />}
-      <Modal />
     </WrapMain>
   );
 }

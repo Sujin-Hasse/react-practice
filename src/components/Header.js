@@ -3,6 +3,10 @@ import GlobalStyle from "../Globalstyle";
 import logo from "../assets/image/icon_logo.png";
 
 const Header = ({ click }) => {
+  const openModal = () => {
+    click();
+  };
+
   return (
     <>
       <GlobalStyle />
@@ -18,7 +22,7 @@ const Header = ({ click }) => {
         <HeaderBlock />
         <WrapBackHeader>
           <SearchInput placeholder="🔍 콘텐츠, 인물, 컬렉션, 유저를 검색해보세요." />
-          <HeaderLoginButton>로그인</HeaderLoginButton>
+          <HeaderLoginButton onClick={openModal}>로그인</HeaderLoginButton>
           <SignUpButton>회원가입</SignUpButton>
         </WrapBackHeader>
       </WrapHeader>
