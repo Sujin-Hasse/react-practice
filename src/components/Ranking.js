@@ -21,7 +21,6 @@ const Ranking = ({ data }) => {
 const MovieWrapper = styled.div`
   display: flex;
   overflow: auto;
-  width: 1200px;
   /* white-space: nowrap; */
 `;
 
