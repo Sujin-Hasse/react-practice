@@ -13,6 +13,7 @@ function App() {
     setClick(true);
   };
 
+  console.log(handleLogin);
   return (
     <WrapMain>
       <GlobalStyle />
