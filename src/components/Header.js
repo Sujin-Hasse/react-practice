@@ -1,19 +1,3 @@
-<<<<<<< HEAD
-import React from "react";
-
-const Header = () => {
-  return (
-    <>
-      <GlobalStyle />
-      <WrapCategory>
-        <Logo src={logo} />
-        <CategoryMovie>영화</CategoryMovie>
-        <CategoryTv>TV</CategoryTv>
-        <CategoryBook>책</CategoryBook>
-        <CategoryWebtoon>웹툰</CategoryWebtoon>
-      </WrapCategory>
-      <HeaderBlock />
-=======
 import styled from "styled-components";
 import GlobalStyle from "../GlobalStyle";
 import logo from "../assets/image/icon_logo.png";
@@ -49,7 +33,6 @@ const Header = () => {
           <SignUpButton>회원가입</SignUpButton>
         </WrapBackHeader>
       </WrapHeader>
->>>>>>> parent of 10f0112 (feat: 모달 컴포넌트 분리)
     </>
   );
 };

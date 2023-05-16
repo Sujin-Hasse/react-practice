@@ -6,12 +6,6 @@ import Modal from "./components/Modal";
 import GlobalStyle from "./GlobalStyle.js";
 
 function App() {
-  const [click, setClick] = useState(false);
-
-  const handleLogin = () => {
-    setClick(true);
-  };
-  console.log(handleLogin);
   return (
     <WrapMain>
       <GlobalStyle />
