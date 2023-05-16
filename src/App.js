@@ -19,6 +19,7 @@ function App() {
       <Header click={handleLogin} />
       <Main />
       {click && <Modal click={setClick} />}
+      <Modal />
     </WrapMain>
   );
 }
