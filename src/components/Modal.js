@@ -14,45 +14,43 @@ const Modal = () => {
     <>
       <CloseButton>&times;</CloseButton>
       {/* 3.true가 된 loginModal 가져오기*/}
-      <Modal>
-        {/* 여기는 수진이가 만든 모달 styled-components */}
-        <Background>
-          <WrapModal>
-            <WrapLogo>
-              <Logo src={logo} />
-            </WrapLogo>
-            <LoginText>로그인</LoginText>
+      {/* 여기는 수진이가 만든 모달 styled-components */}
+      <Background>
+        <WrapModal>
+          <WrapLogo>
+            <Logo src={logo} />
+          </WrapLogo>
+          <LoginText>로그인</LoginText>
 
-            <WrapInput>
-              <IdInput placeholder="이메일" />
-              <PasswordInput placeholder="비밀번호" />
-            </WrapInput>
+          <WrapInput>
+            <IdInput placeholder="이메일" />
+            <PasswordInput placeholder="비밀번호" />
+          </WrapInput>
 
-            <LoginButton>로그인</LoginButton>
-            <CheckPassword>비밀번호를 잊어버리셨나요?</CheckPassword>
-            <MakeAccount>
-              계정이 없으신가요? <MakeAccountButton>회원가입</MakeAccountButton>
-            </MakeAccount>
-            <WrapLine>
-              <Line />
-              <LineText>OR</LineText>
-              <BackLine />
-            </WrapLine>
+          <LoginButton>로그인</LoginButton>
+          <CheckPassword>비밀번호를 잊어버리셨나요?</CheckPassword>
+          <MakeAccount>
+            계정이 없으신가요? <MakeAccountButton>회원가입</MakeAccountButton>
+          </MakeAccount>
+          <WrapLine>
+            <Line />
+            <LineText>OR</LineText>
+            <BackLine />
+          </WrapLine>
 
-            <SocialLoginList>
-              <KakaoLogin src={kakaoLogin} />
-              <GoogleLogin src={googleLogin} />
-              <TwitterLogin src={twitterLogin} />
-              <LineLogin src={lineLogin} />
-            </SocialLoginList>
+          <SocialLoginList>
+            <KakaoLogin src={kakaoLogin} />
+            <GoogleLogin src={googleLogin} />
+            <TwitterLogin src={twitterLogin} />
+            <LineLogin src={lineLogin} />
+          </SocialLoginList>
 
-            <LoginTip>
-              TIP.왓챠 계정이 있으신가요? 왓챠와 왓챠피디아는 같은 계정을
-              사용해요.
-            </LoginTip>
-          </WrapModal>
-        </Background>
-      </Modal>
+          <LoginTip>
+            TIP.왓챠 계정이 있으신가요? 왓챠와 왓챠피디아는 같은 계정을
+            사용해요.
+          </LoginTip>
+        </WrapModal>
+      </Background>
     </>
   );
 };
