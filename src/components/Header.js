@@ -3,9 +3,9 @@ import GlobalStyle from "../Globalstyle";
 import logo from "../assets/image/icon_logo.png";
 
 const Header = ({ click }) => {
-  const openModal = () => {
-    click();
-  };
+  // const openModal = () => {
+  //   click();
+  // };
 
   return (
     <>
@@ -22,7 +22,8 @@ const Header = ({ click }) => {
         <HeaderBlock />
         <WrapBackHeader>
           <SearchInput placeholder="🔍 콘텐츠, 인물, 컬렉션, 유저를 검색해보세요." />
-          <HeaderLoginButton onClick={openModal}>로그인</HeaderLoginButton>
+          <HeaderLoginButton onClick={() => click()}>로그인</HeaderLoginButton>
+          {/* onClick과 같이 매개인자가 전달되지 않는 함수의 경우는 반드시 arrow나 bind를 사용 */}
           <SignUpButton>회원가입</SignUpButton>
         </WrapBackHeader>
       </WrapHeader>
