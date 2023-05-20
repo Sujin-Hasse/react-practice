@@ -5,6 +5,8 @@ import Header from "./components/Header";
 import GlobalStyle from "../src/Globalstyle";
 import Modal from "./components/Modal";
 import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import MoviePage from "./components/MoviePage";
 
 function App() {
   const [click, setClick] = useState(false);
@@ -13,12 +15,19 @@ function App() {
   };
 
   return (
-    <WrapMain>
-      <GlobalStyle />
-      <Header click={handleLogin} />
-      <Main />
-      {click && <Modal click={setClick} />}
-    </WrapMain>
+    <>
+      <WrapMain>
+        <GlobalStyle />
+        <Header click={handleLogin} />
+        <Main />
+        {click && <Modal click={setClick} />}
+      </WrapMain>
+
+      <Routes>
+        <Route path="/" element={WrapMain} />
+        <Route path="/:rankP" element={MoviePage} />
+      </Routes>
+    </>
   );
 }
 
