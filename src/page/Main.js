@@ -12,20 +12,25 @@ const Main = () => {
   const [state, setState] = useState([]);
 
   const ResponseData = async () => {
-    await axios
-      .get("https://api.themoviedb.org/3/movie/popular?language=en-US&page=1", {
+    const res = await axios.get(
+      "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1",
+      {
         method: "GET", //method 지정을 하지 않을 경우에 default 값은 GET이다. 사실상 필요 없는 코드
         headers: {
           accept: "application/json",
           Authorization: "Bearer " + process.env.REACT_APP_API_KEY,
         },
-      })
-      // .then((res) => console.log(res))
-      .then((res) => setState(res.data.results))
-      .catch((err) => console.log(err));
+      }
+    );
+    setState(res.data.results);
+    console.log(res);
+    // .then((res) => console.log(res))
+    // .then((res) => setState(res.data.results))
+    // .catch((err) => console.log(err));
   };
 
   useEffect(() => {
+    ResponseData();
     console.log(state);
   }, [state]);
 
