@@ -2,12 +2,15 @@ import React from "react";
 import styled from "styled-components";
 
 const Movie = ({ data }) => {
+  const { poster_path } = data;
+
+  console.log(poster_path);
   return (
     <>
       <MovieBox>
         <WrapMovieImg>
           <Movierank>{data.rank}</Movierank>
-          <MovieImg src={data.img} />
+          <MovieImg src={`https://image.tmdb.org/t/p/w500${poster_path}`} />
         </WrapMovieImg>
 
         <MovieTitle>{data.title}</MovieTitle>

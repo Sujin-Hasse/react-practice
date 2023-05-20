@@ -22,11 +22,6 @@ function App() {
         <Main />
         {click && <Modal click={setClick} />}
       </WrapMain>
-
-      <Routes>
-        <Route path="/" element={WrapMain} />
-        <Route path="/:rankP" element={MoviePage} />
-      </Routes>
     </>
   );
 }
