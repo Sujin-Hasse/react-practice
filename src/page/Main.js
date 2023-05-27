@@ -5,15 +5,35 @@ import { useState } from "react";
 import MoviePage from "../components/MoviePage";
 import { DATA } from "../assets/Data";
 import { useEffect } from "react";
+import { useSetRecoilState, useRecoilState } from "recoil";
+import { apiAtom } from "../assets/apiAtom";
 
 import axios from "axios";
 
 const Main = () => {
   const [state, setState] = useState([]);
+  const [top, setTop] = useRecoilState(apiAtom);
+
+  useEffect(() => {
+    console.log(top);
+  }, [top]);
+
+  const TopRatedApi = async () => {
+    const response = await axios.get(
+      "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1",
+      {
+        method: "GET",
+        headers: {
+          accept: "application/json",
+          Authorization: "Bearer " + process.env.REACT_APP_API_KEY,
+        },
+      }
+    );
+  };
 
   const ResponseData = async () => {
     const res = await axios.get(
-      "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1",
+      "https://api.themoviedb.org/3/movie/popular?language=ko-KR&page=1",
       {
         method: "GET", //method 지정을 하지 않을 경우에 default 값은 GET이다. 사실상 필요 없는 코드
         headers: {
@@ -22,6 +42,7 @@ const Main = () => {
         },
       }
     );
+
     setState(res.data.results);
     console.log(res);
     // .then((res) => console.log(res))
@@ -31,18 +52,19 @@ const Main = () => {
 
   useEffect(() => {
     ResponseData();
+    TopRatedApi();
     console.log(state);
-  }, [state]);
+  }, []);
 
   return (
     <WrapRanking>
-      <button
+      {/* <button
         onClick={() => {
           ResponseData();
         }}
       >
         gd
-      </button>
+      </button> */}
 
       {/* <Routes>
         <Route path="/" element={<Ranking data={DATA} />} />

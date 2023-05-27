@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 const Movie = ({ data }) => {
-  const { poster_path } = data;
+  const { poster_path, title, country } = data;
 
-  console.log(poster_path);
+  // console.log(poster_path);
   return (
     <>
       <MovieBox>
@@ -13,10 +13,10 @@ const Movie = ({ data }) => {
           <MovieImg src={`https://image.tmdb.org/t/p/w500${poster_path}`} />
         </WrapMovieImg>
 
-        <MovieTitle>{data.title}</MovieTitle>
+        <MovieTitle>{title}</MovieTitle>
 
         <Movieyear>
-          {data.year}•{data.country}
+          {data.year}•{country}
         </Movieyear>
         <MovieAverage>평균★{data.average}</MovieAverage>
         <MoviePercent>
